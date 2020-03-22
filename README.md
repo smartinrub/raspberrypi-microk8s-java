@@ -65,6 +65,19 @@ This is a Spring Boot project intended to be deployed on a Kubernetes cluster.
    
 7. The application is exposed at [https://<node_ip>/uppercase/hello](https://<node_ip>/uppercase/hello)        
    
+### Kubernetes Dashboard
+
+1. kubectl proxy
+
+2. [Darshboard URL](http://127.0.0.1:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#/overview?namespace=default)   
+
+3. Get Token:
+  
+    ```shell script
+    token=$(microk8s.kubectl -n kube-system get secret | grep default-token | cut -d " " -f1)
+    kubectl -n kube-system describe secret $token
+    ```
+
 ### Cleaning up
 
 You can delete a Kubernetes resource with:
