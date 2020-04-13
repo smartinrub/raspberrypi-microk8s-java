@@ -13,13 +13,13 @@ import lombok.extern.slf4j.Slf4j;
 @SpringBootApplication
 public class Application {
 
-	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+    }
 
-	@GetMapping("/uppercase/{inut}")
-	public String uppercase(@PathVariable("input") String input) {
-		log.info("Converting string to uppercase...");
-		return input.toUpperCase();
-	}
+    @GetMapping("/uppercase/{input}")
+    public String uppercase(@PathVariable("input") String input) {
+        log.info("Converting string to uppercase...");
+        return input.toUpperCase();
+    }
 }
